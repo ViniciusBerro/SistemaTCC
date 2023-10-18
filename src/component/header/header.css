@@ -1,7 +1,36 @@
-@media (max-width: 980px) {
-    .navbar{
-        font-size: 40px;
+div .mobile{
+    display: none;
+}
+nav .web{
+    display: flex;
+}
+@media (max-width: 999px) {
+    div .mobile{
+        display: flex;
     }
+    div .web{
+        display: none;
+    }
+    
+    .mobile a, .mobile button{
+        margin: 15px;
+        font-size: 60px;
+        color: white;
+        
+    }
+    .mobile button{
+        background-color: white;
+    }
+    div .mobile .container-fluid{
+        background-color: #0d6efd;
+    }
+    .offcanvas{
+        font-size: 50px;
+    }
+    .offcanvas .offcanvas-header div{
+        font-size: 55px;
+    }
+    
     
     
 }
