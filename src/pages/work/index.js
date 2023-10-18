@@ -4,6 +4,7 @@ import { addDoc,collection } from "firebase/firestore";
 import { db } from "../../db/Firebase";
 
 import { Card,Form,Button,DropdownButton,Dropdown,FloatingLabel } from "react-bootstrap";
+import './work.css'
 
 export default function Work(){
     const [nome,setNome] = useState('')
@@ -51,8 +52,8 @@ export default function Work(){
         <div>
             <Header/>
 
-            <Card className="card-login">
-                <h1 className=".title-request">Pedido de Serviço</h1>
+            <Card className="card-request">
+                <h1 className="title-request">Pedido de Serviço</h1>
                 <Card.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -78,10 +79,10 @@ export default function Work(){
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             <Form.Control type="number" placeholder="Numero da casa" onChange={(e)=>{setNumero(e.target.value)}}/>
-                            <FloatingLabel controlId="floatingTextarea2" label="Comments">
-                              <Form.Control as="textarea" placeholder="Leave a comment here" style={{ height: '100px' }}/>
-                            </FloatingLabel>
                         </Form.Group>
+                        
+                        <Form.Control as="textarea" placeholder="Complemento" onChange={(e)=>{setComple(e.target.value)}}/>
+                        
                         <Button variant="primary" onClick={pedir}>Fazer pedido</Button>
                     </Form>
                 </Card.Body>

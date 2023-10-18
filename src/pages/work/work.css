@@ -1,64 +1,63 @@
-.card-login{
+.card-request{
     width: 18rem;
-    margin-top: 5%;
-    margin-left: 42%;
-    background-color: #DEDEDE;    
+    margin-top: 4%;
+    margin-left: 40%;  
+    margin-bottom: 50px; 
 }
 .title-request{
     margin-top: 10px;
-    margin-left: 40%;
-    font-size: 25px;
+    margin-left: 10%;
+    font-size: 27px;
 }
-.card-login button{
-    margin-left: 35%;
+.card-request button{
+    margin-left: 27%;
     margin-bottom: 4%;
 }
-.card-login a{
-    text-decoration: none;
-    color: black;
-    margin-left: 6%;
-    font-size: 15px;
+.card-request select{
+    margin-bottom: 15px;
 }
-.card-login a:hover{
-    color: blue;
+.card-request textarea{
+    height: 100px;
+    margin-top: 15px;
+    resize: none;
+}
+.card-request button{
+    margin-top: 18px;
 }
 
 @media (max-width: 999px) {
-    .card-login{
+    .card-request{
         width: 40rem;
         margin-top: 15%;
-        margin-left: 20%;
-        background-color: #DEDEDE;
+        margin-left: 18%;
         font-size: 70px;
         padding: 5px;
     }
-    .title-login{
-        margin-left: 31%;
-        font-size: 100px;
-    }
-    .card-login input{
-        margin-top: 20px;
+    .title-request{
+        margin-left: 4%;
         font-size: 70px;
+    }
+    .card-request input{
+        margin-top: 20px;
+        font-size: 55px;
         margin-bottom: 70px;
     }
-    .card-login button{
-        margin-top: 20px;
-        margin-left: 30%;
-        font-size: 70px;
-        margin-bottom: 2%;
+    .card-request select{
+        font-size: 55px;
+        margin-bottom: 10%;
+    }
+    .card-request textarea{
+        color: gray;
+        height: 250px;
+        font-size: 50px;
+
+    }
+    .card-request button{
+        margin-top: 10%;
+        margin-left: 15%;
+        font-size: 60px;
+        margin-bottom: 10%;
     }
     
-    .card-login a{
-        background-color: blue;
-        color: white;
-        border-radius: 5px;
-        padding: 8px;
-        margin-left: 5%;
-        font-size: 35px;
-    }
-    .card-login a:hover{
-        background-color: rgb(0, 0, 212);
-        color: white;
-    }
     
 }

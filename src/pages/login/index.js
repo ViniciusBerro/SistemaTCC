@@ -40,10 +40,10 @@ export default function Login(){
                 <Card.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control type="email" placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
+                            <Form.Control type="email" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Control type="password" placeholder="Password" onChange={(e)=>{setSenha(e.target.value)}}/>
+                            <Form.Control type="password" placeholder="Senha" onChange={(e)=>{setSenha(e.target.value)}}/>
                         </Form.Group>
                         <Button variant="primary" onClick={Abrir}>Entrar</Button>
                     </Form>
