@@ -1,5 +1,5 @@
-import { useState,useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../component/header";
 
 import { auth,db } from "../../db/Firebase";
@@ -43,27 +43,23 @@ export default function Register(){
         <div>
             <Header/>
             
-            <Card style={{ width: '18rem' }} className="card-register">
-                <Card.Title className="title-register">Registro</Card.Title>
+            <Card className="card-register">
+                <h1 className="title-register">Registro</h1>
                 <Card.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Label>Nome:</Form.Label>
                             <Form.Control type="text" placeholder="Digite o nome" onChange={(e)=>{setNome(e.target.value)}}/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Label>Email:</Form.Label>
-                            <Form.Control type="text" placeholder="Digite o nome" onChange={(e)=>{setEmail(e.target.value)}}/>
+                            <Form.Control type="email" placeholder="Digite o email" onChange={(e)=>{setEmail(e.target.value)}}/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Label>Senha:</Form.Label>
                             <Form.Control type="password" placeholder="Senha" onChange={(e)=>{setSenha(e.target.value)}}/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Label>Confirme a Senha:</Form.Label>
                             <Form.Control type="password" placeholder="Confirme a senha" onChange={(e)=>{setCSenha(e.target.value)}}/>
                         </Form.Group>
-                        <Button className="bnt-register" variant="primary" onClick={confirma}>Cadastrar</Button>
+                        <Button variant="primary" onClick={confirma}>Cadastrar</Button>
                     </Form>
                 </Card.Body>
             </Card>

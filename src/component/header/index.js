@@ -10,7 +10,7 @@ export default function Header(){
         <Navbar bg="primary" data-bs-theme="dark" className="navbar">
         <Container>
           <Navbar.Brand href="#home" >Sistema</Navbar.Brand>
-          <Nav className="me-auto " className='justify-content-end'>
+          <Nav className=" me-auto " className="justify-content-end">
           <Nav.Item>
                 <Nav.Link href="/">Inicio</Nav.Link>
             </Nav.Item>
@@ -19,6 +19,9 @@ export default function Header(){
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/perfil">Perfil</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/pedidos">Pedidos</Nav.Link>
             </Nav.Item>
           </Nav>
         </Container>

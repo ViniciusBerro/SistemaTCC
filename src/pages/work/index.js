@@ -3,6 +3,8 @@ import { useState } from "react";
 import { addDoc,collection } from "firebase/firestore";
 import { db } from "../../db/Firebase";
 
+import { Card,Form,Button,DropdownButton,Dropdown,FloatingLabel } from "react-bootstrap";
+
 export default function Work(){
     const [nome,setNome] = useState('')
     const [pedido, setPedido] = useState('')
@@ -27,7 +29,7 @@ export default function Work(){
         rua !=='' && 
         bairro !== '' &&
         numero !== ''){
-          await addDoc(collection(db,`pedido`), {
+          await addDoc(collection(db,'pedido'), {
             nomeUser: nome,
             telefone: telefone,
             ruaPedido: rua,
@@ -37,7 +39,7 @@ export default function Work(){
           })
           .then(()=>{
             alert("Pedido efetuado com sucesso");
-          }) .catch((erro)=>{
+          }).catch((erro)=>{
             alert("Erro: "+erro)
           })
         }else{
@@ -49,32 +51,41 @@ export default function Work(){
         <div>
             <Header/>
 
-            <label>Pedido de Serviço</label>
-            <form>
-                <label>Nome:</label>
-                <input placeholder="Nome do usuario que fez o pedido" type="text" onChange={(e)=>{setNome(e.target.value)}}/>
-                <label>Tipo de pedido:</label>
-                <select value={pedido} onChange={selecionar}>
-                    <option value={""}>Seleceionar...</option>
-                    <option value="Manutenção de Lampada">Manutenção de Lampada</option>
-                    <option value="Limpar Buero">Limpar Buero</option>
-                    <option value="Carga de Terra">Carga de Terra</option>
-                    <option value="Roçar">Roçar</option>
-                    <option value="Repintar faixas">Repintar faixas</option>
-                    <option value="Manutenção de Pracinha">Manutenção de Pracinha</option>
-                </select>
-                <label>Telefone:</label>
-                <input placeholder="Numero de telefone" type="tel" onChange={(e)=>{setTelefone(e.target.value)}}/>
-                <label>Rua:</label>
-                <input placeholder="Digite a rua" type="text" onChange={(e)=>{setRua(e.target.value)}}/>
-                <label>Bairro:</label>
-                <input placeholder="Digite o bairro" type="text" onChange={(e)=>{setBairro(e.target.value)}}/>
-                <label>Numero:</label>
-                <input placeholder="Numero do endereço" type="number" onChange={(e)=>{setNumero(e.target.value)}}/>
-                <label>Complemento:</label>
-                <input placeholder="Caso precise, adicione o complemento" type="text" onChange={(e)=>{setComple(e.target.value)}}/>
-                <button onClick={pedir}>Pedir</button>
-            </form>
+            <Card className="card-login">
+                <h1 className=".title-request">Pedido de Serviço</h1>
+                <Card.Body>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Control type="text" placeholder="Nome" onChange={(e)=>{setNome(e.target.value)}}/>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Control type="tel" placeholder="Telefone" onChange={(e)=>{setTelefone(e.target.value)}}/>
+                        </Form.Group>
+                        <Form.Select aria-label="Default select example" value={pedido} onChange={selecionar}>
+                          <option value={""}>Seleceionar Pedido...</option>
+                          <option value="Manutenção de Lampada">Manutenção de Lampada</option>
+                          <option value="Limpar Buero">Limpar Buero</option>
+                          <option value="Carga de Terra">Carga de Terra</option>
+                          <option value="Roçar">Roçar</option>
+                          <option value="Repintar faixas">Repintar faixas</option>
+                          <option value="Manutenção de Pracinha">Manutenção de Pracinha</option>
+                        </Form.Select>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Control type="text" placeholder="Rua" onChange={(e)=>{setRua(e.target.value)}}/>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Control type="text" placeholder="Bairro" onChange={(e)=>{setBairro(e.target.value)}}/>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Control type="number" placeholder="Numero da casa" onChange={(e)=>{setNumero(e.target.value)}}/>
+                            <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                              <Form.Control as="textarea" placeholder="Leave a comment here" style={{ height: '100px' }}/>
+                            </FloatingLabel>
+                        </Form.Group>
+                        <Button variant="primary" onClick={pedir}>Fazer pedido</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
         </div>
     )
 }
