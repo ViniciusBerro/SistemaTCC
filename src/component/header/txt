@@ -1,0 +1,37 @@
+<div className="img">
+                <p></p>
+            </div>
+            <div className="menu">
+                <Link to="/">Inicio</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/pedidos">Pedidos</Link>
+            </div>
+
+            html{
+                margin: 0;
+            }
+            header{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                height: 60px;
+                overflow: auto;
+                background-color: #D9D9D9;
+            }
+            header a{
+                display: block;
+                float: right;
+                position: relative;
+                text-align: right;
+                padding: 16px;
+                text-decoration: none;
+                color: black;
+                transition: ease-in-out 0.4s;
+            }
+            header .img{
+                display: block;
+                float: left;
+                background-color: red;
+                width: 55px;
+                height: 55px;
+            }

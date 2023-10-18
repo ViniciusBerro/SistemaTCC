@@ -1,0 +1,5 @@
+@media (max-width: 999px) {
+    .navbar a{
+        font-size: 40px;
+    }
+}

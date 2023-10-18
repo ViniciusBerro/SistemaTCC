@@ -1,0 +1,19 @@
+.card-register{
+    width: '18rem';
+    margin-top: 5%;
+    margin-left: 42%;
+    background-color: #EDEDED;   
+}
+.title-register{
+    margin-top: 20px;
+    margin-left: 30%;
+    font-size: 30px;
+}
+.bnt-register{
+    margin-left: 32%;
+}
+@media (max-width: 999px) {
+    .navbar a{
+        font-size: 40px;
+    }
+}

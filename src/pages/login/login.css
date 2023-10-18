@@ -1,0 +1,64 @@
+.card-login{
+    width: 18rem;
+    margin-top: 5%;
+    margin-left: 42%;
+    background-color: #DEDEDE;    
+}
+.title-login{
+    margin-top: 10px;
+    margin-left: 40%;
+    font-size: 25px;
+}
+.card-login button{
+    margin-left: 35%;
+    margin-bottom: 4%;
+}
+.card-login a{
+    text-decoration: none;
+    color: black;
+    margin-left: 6%;
+    font-size: 15px;
+}
+.card-login a:hover{
+    color: blue;
+}
+
+@media (max-width: 999px) {
+    .card-login{
+        width: 40rem;
+        margin-top: 15%;
+        margin-left: 20%;
+        background-color: #DEDEDE;
+        font-size: 70px;
+        padding: 5px;
+    }
+    .title-login{
+        margin-left: 31%;
+        font-size: 100px;
+    }
+    .card-login input{
+        margin-top: 20px;
+        font-size: 70px;
+        margin-bottom: 70px;
+    }
+    .card-login button{
+        margin-top: 20px;
+        margin-left: 30%;
+        font-size: 70px;
+        margin-bottom: 2%;
+    }
+    
+    .card-login a{
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        padding: 8px;
+        margin-left: 5%;
+        font-size: 35px;
+    }
+    .card-login a:hover{
+        background-color: rgb(0, 0, 212);
+        color: white;
+    }
+    
+}
