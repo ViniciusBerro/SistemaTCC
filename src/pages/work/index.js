@@ -36,10 +36,12 @@ export default function Work(){
             ruaPedido: rua,
             bairroPedido: bairro,
             numeroPedido: numero,
+            serviço: pedido,
             comple: comple, 
           })
           .then(()=>{
             alert("Pedido efetuado com sucesso");
+            
           }).catch((erro)=>{
             alert("Erro: "+erro)
           })

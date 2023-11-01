@@ -1,5 +1,5 @@
 import {  useNavigate,Link } from "react-router-dom"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Header from "../../component/header"
 
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -9,14 +9,16 @@ import './login.css'
 import { Form,Button, Card } from "react-bootstrap";
 
 
+
 export default function Login(){
     const [email,setEmail] = useState('');
     const [senha,setSenha] = useState('');
     const navigate = useNavigate();
 
+
     async function Abrir(e){
+        e.preventDefault()
         if(email !== '' && senha !== ''){
-            e.preventDefault()
             await signInWithEmailAndPassword(auth, email, senha)
                 .then(()=>{
 
@@ -25,6 +27,7 @@ export default function Login(){
                 .catch(()=>{
                     alert("Erro ao efetuar o Cadastro")
                 })
+            
         }
         else{
             alert("Prencha os Campos");
