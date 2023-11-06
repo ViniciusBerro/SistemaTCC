@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
-
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/auth"
 
 import './header.css'
 import { Navbar, Nav, Container, Offcanvas, NavDropdown, Form, Button } from "react-bootstrap"
 
 export default function Header(){
+  const {signed} = useContext(AuthContext);
+
     return( 
       <>
         <div className="">
@@ -27,8 +29,8 @@ export default function Header(){
                   <Offcanvas.Body>
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                       <Nav.Link href="/">Inicio</Nav.Link>
-                      <Nav.Link href="/login">Login</Nav.Link>
-                      <Nav.Link href="/perfil">Perfil</Nav.Link>
+                      {signed ? <Nav.Link href="/perfil">Perfil</Nav.Link>:<Nav.Link href="/login">Login</Nav.Link>}
+                      
                       <Nav.Link href="/pedidos">Pedidos</Nav.Link>
                     </Nav>
                   </Offcanvas.Body>
@@ -46,12 +48,15 @@ export default function Header(){
               <Nav.Item>
                 <Nav.Link href="/">Inicio</Nav.Link>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/Login">Login</Nav.Link>
-              </Nav.Item>
+              {signed ?
               <Nav.Item>
                 <Nav.Link href="/perfil">Perfil</Nav.Link>
               </Nav.Item>
+              : 
+                <Nav.Item>
+                  <Nav.Link href="/Login">Login</Nav.Link>
+                </Nav.Item>
+              }
               <Nav.Item>
                   <Nav.Link href="/pedidos">Pedidos</Nav.Link>
               </Nav.Item>

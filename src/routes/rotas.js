@@ -3,8 +3,8 @@ import Home from '../pages/home';
 import Login from '../pages/login';
 import Register from '../pages/register';
 import Perfil from '../pages/Perfil';
-import Private from './private';
 import Work from '../pages/work';
+
 
 export default function Rotas(){
     return(
@@ -13,7 +13,7 @@ export default function Rotas(){
                 <Route path='/' element={<Home/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/registro' element={<Register/>}/>
-                <Route path='/perfil' element={<Private><Perfil/></Private>}/>
+                <Route path='/perfil' element={<Perfil/>}/>
                 <Route path='/pedidos' element={<Work/>}/>
             </Routes>
         </BrowserRouter>
