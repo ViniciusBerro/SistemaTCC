@@ -4,7 +4,6 @@ import { useState, useEffect, createContext } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import {db, auth} from "../db/Firebase"
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({});
 
@@ -22,8 +21,8 @@ function AuthProvider({children}){
                 setUser(JSON.parse(storageUser))
                 setLoading(false);
             }
-
             setLoading(false);
+
         }
         loadUser();
     },[])
@@ -56,10 +55,12 @@ function AuthProvider({children}){
         })
         .catch((error)=>{
             alert("Erro ao Logar:"+error)
+            setLoadingAuth(false);
         })
     }
     async function register(nome, email, senha){
-        setLoadingAuth(true)
+        setLoadingAuth(true);
+
         await createUserWithEmailAndPassword(auth, email, senha)
         .then(async(value)=>{
             let uid = value.user.uid
@@ -90,6 +91,7 @@ function AuthProvider({children}){
         }).then(()=>{})
         .catch((error)=>{
             alert("Erro ao efetuar o Cadastro: "+error)
+            setLoadingAuth(false);
         })
     }
 
@@ -104,14 +106,15 @@ function AuthProvider({children}){
     return(
         <AuthContext.Provider 
         value={{
-            signed: !user,
+            signed: !!user,
             user,
             login,
             register,
             logout,
+            loadingAuth,
+            loading,
             infoUser,
-            setUser,
-            loading
+            setUser
         }}>
             {children}
         </AuthContext.Provider>
