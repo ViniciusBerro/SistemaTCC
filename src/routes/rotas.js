@@ -4,7 +4,7 @@ import Login from '../pages/login';
 import Register from '../pages/register';
 import Perfil from '../pages/Perfil';
 import Work from '../pages/work';
-
+import EditPerfil from '../pages/EditPerfil';
 
 export default function Rotas(){
     return(
@@ -14,6 +14,7 @@ export default function Rotas(){
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/registro' element={<Register/>}/>
                 <Route path='/perfil' element={<Perfil/>}/>
+                <Route path='/Editar-Perfil' element={<EditPerfil/>}/>
                 <Route path='/pedidos' element={<Work/>}/>
             </Routes>
         </BrowserRouter>
