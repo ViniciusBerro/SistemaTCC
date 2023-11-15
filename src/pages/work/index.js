@@ -128,7 +128,7 @@ export default function Work(){
                             <Form.Control type="number" placeholder="Numero da casa" value={user && user.numero !== ''?user.numero : numero} onChange={(e)=>{setNumero(e.target.value)}}/>
                         </Form.Group>
                         
-                        <Form.Control as="textarea" placeholder="Complemento" value={user&& user.comple !== '' ?user.comple: comple} onChange={(e)=>{setComple(e.target.value)}}/>
+                        <Form.Control as="textarea" placeholder="Complemento" value={user && user.comple !== '' ?user.comple: comple} onChange={(e)=>{setComple(e.target.value)}}/>
                         
                         <Button variant="primary" onClick={pedir}>Fazer pedido</Button>
                     </Form>

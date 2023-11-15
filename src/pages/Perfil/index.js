@@ -7,6 +7,8 @@ import {db} from '../../db/Firebase'
 import { Card,Form, Button, Alert } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
+import './perfil.css'
+
 export default function Perfil(){
     
     const navigate = useNavigate();
@@ -31,22 +33,24 @@ export default function Perfil(){
         <div>
             <Header/>
             
-            <h1 className="title-perfil">Perfil</h1>
-               
-                <form className="infoUser">
-                    <p>Nome: {user?user.nome:''}</p>
-                    <p>Email: {user?user.email:''}</p>
-                    <p>Rua: {user?user.rua:''}</p>
-                    <p>Bairro: {user?user.bairro:''}</p>
-                    <p>Numero: {user?user.numero:''}</p>
-                    <p>Complemento:</p>
-                    <p>{user?user.comple:''}</p>
-                </form>
-                    
-                <Button variant="primary" onClick={editar}>Modificar</Button>
-                <Button variant="danger" onClick={Sair}>Sair</Button>
-
+            <Button variant="danger" id="btn-sair" onClick={Sair}>Sair</Button>
+                <Card className="card-perfil modPerfil" id="card-perfil">
+                <h1 className="title-perfil">Perfil</h1>
+                <Card.Body>
+                    <form className="infoUser">
+                        <p>Nome: {user?user.nome:''}</p>
+                        <p>Email: {user?user.email:''}</p>
+                        <p>Rua: {user?user.rua:''}</p>
+                        <p>Bairro: {user?user.bairro:''}</p>
+                        <p>Numero: {user?user.numero:''}</p>
+                        <p>Complemento:</p>
+                        <p>{user?user.comple:''}</p>
+                    </form>
+                    <Button id="bnt-alterar" variant="primary" onClick={editar}>Alterar Perfil</Button>
+                </Card.Body>
+            </Card>
         </div>
+        
     )
 }
 

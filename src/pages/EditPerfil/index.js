@@ -6,8 +6,11 @@ import { doc, updateDoc } from "firebase/firestore"
 import {db} from '../../db/Firebase'
 
 import { Card,Form, Button, Alert } from "react-bootstrap"
+import './editPerfil.css'
 
 import { useNavigate } from "react-router-dom"
+
+
 
 export default function EditPerfil(){
     const navigate = useNavigate();
@@ -52,11 +55,11 @@ export default function EditPerfil(){
     return(
         <div>
             <Header/>
-            <Button variant="primary" onClick={voltar}>Voltar</Button>
-            <Card className="card-perfil modPerfil">
+            <Button variant="primary" id="bnt-voltar-perfil" onClick={voltar}>Voltar</Button>
+            <Card className="card-perfil modPerfil" id="card-perfil-edit">
                 <h1>Editar Perfil</h1>
                 <Card.Body>
-                    <Form>
+                    <Form id="form-edit-perfil">
                             <Form.Group className="mb-3" >
                                 Nome:
                                 <Form.Control type="text" value={nome} onChange={(e)=>setNome(e.target.value)}/>
@@ -77,7 +80,7 @@ export default function EditPerfil(){
                                 Complemento:
                                 <Form.Control type="text" placeholder="Complemento" value={comple} onChange={(e)=>{setComple(e.target.value)}}/>
                             </Form.Group>
-                            <Button variant="primary" onClick={alterar}>Modificar</Button>
+                            <Button variant="primary" id="bnt-edit-perfil" onClick={alterar}>Modificar</Button>
                                 
                         </Form>
                     </Card.Body>

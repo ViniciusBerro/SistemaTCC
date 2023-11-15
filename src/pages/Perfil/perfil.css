@@ -1,0 +1,43 @@
+.title-perfil{
+    text-align: center;
+}
+#btn-sair{
+    margin-top: 1%;
+    height: 35px;
+    margin-left: 12px;
+}
+.infoUser{
+    text-align: left;
+    margin-left: 38%;
+}
+#bnt-alterar{
+    margin-top: 12px;
+    margin-left: 40%;
+}
+#card-perfil{
+    margin: 0 30% 0 30%;
+}
+@media (max-width: 999px) {
+    #btn-sair{
+        font-size: 55px;
+        height: 5%;
+    }
+    #card-perfil{
+        margin: 2% 12% 0 12%;
+    }
+    .title-perfil{
+        font-size: 120px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .infoUser{
+        font-size: 55px;
+        margin-left: 15%;
+    }
+    #bnt-alterar{
+        margin-top: 5%;
+        font-size: 50px;
+        margin-left: 30%;
+        margin-bottom: 2%;
+    }
+}
