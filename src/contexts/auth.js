@@ -103,6 +103,10 @@ function AuthProvider({children}){
         localStorage.removeItem('@infoUser');
         setUser(null);
     }
+
+
+    
+
     return(
         <AuthContext.Provider 
         value={{

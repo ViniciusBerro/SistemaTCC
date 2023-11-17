@@ -1,10 +1,8 @@
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext } from "react"
 import { AuthContext } from "../../contexts/auth"
 import Header from "../../component/header"
-import { doc, updateDoc } from "firebase/firestore"
-import {db} from '../../db/Firebase'
 
-import { Card,Form, Button, Alert } from "react-bootstrap"
+import { Card, Button, Alert } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 import './perfil.css'
@@ -12,7 +10,7 @@ import './perfil.css'
 export default function Perfil(){
     
     const navigate = useNavigate();
-    const {user,logout,infoUser,setUser}= useContext(AuthContext);
+    const {user,logout}= useContext(AuthContext);
 
     const [nome, setNome] = useState(user && user.nome)
     const [email, setEmail] = useState(user && user.email)
