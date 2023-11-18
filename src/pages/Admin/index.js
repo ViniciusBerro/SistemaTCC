@@ -1,10 +1,11 @@
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/auth"
 import { useNavigate } from "react-router-dom";
-import { collection, getDocs, orderBy, limit, startAfter, query, updateDoc } from "firebase/firestore";
+import { collection, getDocs, orderBy, limit, startAfter, query, updateDoc,doc } from "firebase/firestore";
 import { db } from "../../db/Firebase";
 
 import './admin.css'
+import { reload } from "firebase/auth";
 
 const listRef = collection(db,'Pedido');
 
@@ -79,8 +80,17 @@ export default function Admin(){
     function Voltar(){
         navigate('/')
     }
-    async function encarregado(e,b){
-        console.log(e,b);
+    async function encarregado(item){
+        const docRef = doc(listRef, item.id)
+        await updateDoc(docRef,{
+            status: 'Encarregado'
+        }).then(
+            window.location.reload(),
+            alert('Enviado para o encarregado')
+            
+            
+            
+        )
     }
     async function buscarMais(){
         setLoadingMore(true);
@@ -118,7 +128,7 @@ export default function Admin(){
             </p>
             <p>
                 Status do Serviço:
-                <select>
+                <select value={buscaStatus} onChange={(ev)=>{setBuscaStatus(ev.target.value)}}>
                     <option value=''>Todos...</option>
                     <option value='Enviado'>Enviado</option>
                     <option value='Encarregado'>Encarregado</option>
@@ -140,22 +150,22 @@ export default function Admin(){
                 </thead>
                 <tbody>
                     {pedidosFiltro.map((item, index)=>{
-                        
                         return(
-                        <tr key={index && buscaStatus === item.status}>
-                            <td data-label='Status'>
-                                <button className="badge" style={{backgroundColor:item.status === 'Enviado' || 'enviado' ? '#ffa500':'#999'}} >
-                                    {item.status}
-                                </button>
-                            </td>
-                            <td data-label='Nome'>{item.nome}</td>
-                            <td data-label='Bairro'>{item.bairro}</td>
-                            <td data-label='Rua'>{item.rua}</td>
-                            <td data-label='Numero'>{item.numero}</td>
-                            <td data-label='Telefone'>{item.telefone}</td>
-                            <td data-label='Servico'>{item.servico}</td>
-                        </tr>
-                        )
+                            <tr key={index}>
+                                <td data-label='Status'>
+                                    <button className="badge" onClick={()=>encarregado(item)} style={{backgroundColor:item.status === 'Enviado' || 'enviado' ? '#ffa500':'#999'}} >
+                                        {item.status}
+                                    </button>
+                                </td>
+                                <td data-label='Nome'>{item.nome}</td>
+                                <td data-label='Bairro'>{item.bairro}</td>
+                                <td data-label='Rua'>{item.rua}</td>
+                                <td data-label='Numero'>{item.numero}</td>
+                                <td data-label='Telefone'>{item.telefone}</td>
+                                <td data-label='Servico'>{item.servico}</td>
+                            </tr>
+                            )
+                        
                     })}
                     
                     
