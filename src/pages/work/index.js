@@ -8,7 +8,6 @@ import { db } from "../../db/Firebase";
 import { Card,Form,Button,DropdownButton,Dropdown,FloatingLabel } from "react-bootstrap";
 import './work.css'
 
-const listRef = collection(db, "Pedido");
 export default function Work(){
   const {user, signed} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -81,7 +80,7 @@ export default function Work(){
         numero: numero,
         comple: comple,
         servico: tipo,
-        status: 'enviado'
+        status: 'Enviado'
       })
       .then(()=>{
         alert("Pedido efetuado");

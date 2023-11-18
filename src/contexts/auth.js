@@ -42,7 +42,7 @@ function AuthProvider({children}){
                 nome: docSnap.data().nomeUser,
                 email: docSnap.data().emailUser,
                 rua: docSnap.data().ruaUser,
-                bairro: docSnap.data().ruaUser,
+                bairro: docSnap.data().bairroUser,
                 numero: docSnap.data().numeroUser,
                 comple: docSnap.data().compleUser
 
