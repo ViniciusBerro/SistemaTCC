@@ -1,0 +1,18 @@
+.grid-admin{
+    margin-left: 46%;
+}
+.titulo-menu-admin{
+    margin-left: 38%;
+    margin-bottom: 12px;
+}
+.grid-admin button{
+    display: block;
+    margin-bottom: 12px;
+    width: 150px;
+    height: 50px;
+    transition: 0.5s;
+}
+.grid-admin button:hover{
+    background-color: gray;
+    color: white;
+}

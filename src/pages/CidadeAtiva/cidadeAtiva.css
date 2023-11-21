@@ -1,0 +1,27 @@
+.form-cidade-ativa{
+    text-align: center;
+    background: #DDD;
+    width: 260px;
+    height: 150px;
+    padding-top: 15px;
+    margin-left: 41%;
+    border-radius: 5%;
+}
+.titulo-cidade-ativa{
+    margin-left: 32%;
+}
+.bnt-cidade-ativa{
+    margin-left: 47.5%;
+    margin-top: 12px;
+    text-align: center;
+    transition: 0.5s;
+    margin-bottom: 15px;
+}
+.bnt-cidade-ativa:hover{
+    background-color: grey;
+    color: white;
+}
+.sem-cadastro{
+    margin-top: 15px;
+    margin-left: 46.5%;
+}

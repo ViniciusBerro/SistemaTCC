@@ -6,6 +6,8 @@ import { db } from "../../db/Firebase";
 import { addDoc, doc,collection,getDocs,query,updateDoc,deleteField, FieldValue, Firestore, deleteDoc } from "firebase/firestore";
 import { useEffect } from "react";
 
+import './cidadeAtiva.css'
+
 const listRef = collection(db,'CidadeAtiva')
 export default function CidadeAtiva(){
     const {logout} = useContext(AuthContext)
@@ -45,7 +47,7 @@ export default function CidadeAtiva(){
         }
         
     }
-    async function cadastrarCidadeAtiva(e){
+    async function cadastrarCidadeAtiva(){
         if(bairro !== '' && dataInicio !== '' && dataFinal !== ''){
             await addDoc(collection(db, 'CidadeAtiva'),{
                 diaInicio: dataInicio,
@@ -92,25 +94,27 @@ export default function CidadeAtiva(){
             <button className="bnt-sair" onClick={Sair}>Sair</button>
             <button className="bnt-voltar" onClick={Voltar}>Voltar</button>
             <h1 className="titulo-admin">Modo administrador</h1>
-            <h1>Admin</h1>
-            <form>
-                <p>Bairro:</p>
-                <input type="text" placeholder="Bairro" onChange={(e)=>{setBairro(e.target.value)}}/>
-                <p>Data de Inicio:</p>
-                <input type="date" onChange={(e)=>{setDataInicio(e.target.value)}}/>
-                <p>Data de Final:</p>
-                <input type="date" onChange={(e)=>{setDataFinal(e.target.value)}}/>
+            <h1 className="titulo-cidade-ativa">Cadastrar dia da cidade Ativa</h1>
+            <form className="form-cidade-ativa">
+                <p>Bairro: 
+                <input type="text" placeholder="Bairro" onChange={(e)=>{setBairro(e.target.value)}}/></p>
+                <p>Data de Inicio:
+                <input type="date" onChange={(e)=>{setDataInicio(e.target.value)}}/></p>
+                <p>Data de Final:
+                <input type="date" onChange={(e)=>{setDataFinal(e.target.value)}}/></p>
+                
             </form>
-            <button onClick={cadastrarCidadeAtiva}>Cadastrar</button>
+            <button className="bnt-cidade-ativa" onClick={cadastrarCidadeAtiva}>Cadastrar</button>
+            
             <div>
                 
                     {cidadeAtiva.length === 0 ?(
-                        <div>
+                        <div className="sem-cadastro">
                             <span>Nada Cadastrado...</span>
                         </div>
                     ):(
                         <>
-                            <table>
+                            <table className="tabela-cidade-ativa">
                                 <thead>
                                     <tr>
                                         <th>Bairro</th>

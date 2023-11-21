@@ -115,9 +115,9 @@ export default function Work(){
                   <Form.Control type="tel" placeholder="Telefone" onChange={(e)=>{setTelefone(e.target.value)}}/>
                 </Form.Group>
                   <Form.Select aria-label="Default select example" value={tipo} onChange={selecionar}>
-                    <option value={""}>Seleceionar Pedido...</option>
-                    <option value="Manutenção de Lampada">Manutenção de Lampada</option>
-                    <option value="Limpar Buero">Limpar Buero</option>
+                    <option value={""}>Selecionar Pedido...</option>
+                    <option value="Manutenção de Lâmpada">Manutenção de Lâmpada</option>
+                    <option value="Limpar Bueiro">Limpar Bueiro</option>
                     <option value="Carga de Terra">Carga de Terra</option>
                     <option value="Roçar">Roçar</option>
                     <option value="Repintar faixas">Repintar faixas</option>

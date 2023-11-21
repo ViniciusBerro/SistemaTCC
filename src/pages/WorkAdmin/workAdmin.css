@@ -8,10 +8,12 @@
 .bnt-sair:hover{
     background-color: red;
     color: white;
+    transition: 0.1s;
 }
 .bnt-voltar:hover{
     background-color: blue;
     color: white;
+    transition: 0.1s;
 }
 .titulo-admin{
     text-align: center;
