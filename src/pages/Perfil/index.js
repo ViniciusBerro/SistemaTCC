@@ -2,8 +2,8 @@ import { useState, useContext } from "react"
 import { AuthContext } from "../../contexts/auth"
 import Header from "../../component/header"
 
-import { Card, Button, Alert } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
+import { Card, Button } from "react-bootstrap"
+import { useNavigate,Link } from "react-router-dom"
 
 import './perfil.css'
 
@@ -27,11 +27,15 @@ export default function Perfil(){
     function editar(){
         navigate('/Editar-Perfil')
     }
+    function MeusPedidos(){
+        navigate('/Meus-Pedidos')
+    }
     return(
         <div>
             <Header/>
             
             <Button variant="danger" id="btn-sair" onClick={Sair}>Sair</Button>
+            <Button variant="primary" id="btn-pedidos" onClick={MeusPedidos}>Pedidos</Button>
                 <Card className="card-perfil modPerfil" id="card-perfil">
                 <h1 className="title-perfil">Perfil</h1>
                 <Card.Body>

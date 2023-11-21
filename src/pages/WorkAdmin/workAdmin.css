@@ -1,0 +1,70 @@
+.bnt-sair{
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.bnt-voltar{
+    margin-left: 1%;
+}
+.bnt-sair:hover{
+    background-color: red;
+    color: white;
+}
+.bnt-voltar:hover{
+    background-color: blue;
+    color: white;
+}
+.titulo-admin{
+    text-align: center;
+    margin-bottom: 1%;
+}
+table{
+    border: 1px solid #ccc;
+    margin: 0 20px;
+    padding: 0;
+    width: 95%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+table caption{
+    font-size: 12px;
+    margin: 0.5em 0 0.75em;
+}
+table tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+}
+table th, table td{
+    padding: 0.60em;
+    text-align: center;
+
+}
+table th{
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.text-not{
+    margin: 2em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.buscar-pedidos-admin{
+    margin: 15px 0 0 45%;
+}
+.busca-servico{
+    display: inline;
+    width: 15%;
+    margin-left: 3%;
+    margin-bottom: 2%;
+}
+.busca-servico select{
+    margin-left: 1%;
+}
+.busca-status{
+    display: inline;
+    margin-left: 2%;
+}
+.busca-status select{
+    margin-left: 1%;
+}

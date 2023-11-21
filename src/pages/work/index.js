@@ -23,7 +23,6 @@ export default function Work(){
   
   function selecionar(e){
     setTipo(e.target.value)
-    console.log(e.target.value);
   }
   async function pedir(e){
     debugger
@@ -33,12 +32,14 @@ export default function Work(){
         dia: new Date(),
         telefone: telefone,
         nome: user.nome,
+        email: user.email,
         bairro: user.bairro,
         rua: user.rua,
         numero: user.numero,
         comple: comple,
         servico: tipo,
-        status: 'enviado'
+        cor: '#ffa500',
+        status: 'Enviado'
       })
       .then(()=>{
         alert("Pedido efetuado");
@@ -54,6 +55,7 @@ export default function Work(){
         dia: new Date(),
         telefone: telefone,
         nome: user.nome,
+        email: user.email,
         bairro: bairro,
         rua: rua,
         numero: numero,
@@ -75,6 +77,7 @@ export default function Work(){
         dia: new Date(),
         telefone: telefone,
         nome: nome,
+        email: 'N/E',
         bairro: bairro,
         rua: rua,
         numero: numero,

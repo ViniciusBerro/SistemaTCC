@@ -6,6 +6,11 @@
     height: 35px;
     margin-left: 12px;
 }
+#btn-pedidos{
+    margin-top: 1%;
+    height: 35px;
+    margin-left: 10px;
+}
 .infoUser{
     text-align: left;
     margin-left: 38%;
@@ -19,6 +24,10 @@
 }
 @media (max-width: 999px) {
     #btn-sair{
+        font-size: 55px;
+        height: 5%;
+    }
+    #btn-pedidos{
         font-size: 55px;
         height: 5%;
     }

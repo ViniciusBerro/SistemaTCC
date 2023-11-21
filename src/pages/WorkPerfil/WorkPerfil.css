@@ -1,0 +1,69 @@
+.tabela-perfil{
+    width: 95%;
+    margin: 0 30px 20px 30px;
+}
+#bnt-buscar-mais{
+    align-items: center;
+    margin-left: 45%;
+}
+#text-not{
+    margin-left: 45%;
+    text-align: center;
+}
+.buscando{
+  text-align: center;
+  
+}
+@media (max-width: 999px) {
+    table{
+        border:0;
+        font-size: 55px
+      };
+  
+      table caption{
+        font-size: 1.3em;
+      }
+  
+      table thead{
+        border:none;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+  
+      table tr{
+        border-bottom: 3px solid #DDD;
+        display: block;
+        margin-bottom: 0.60em;
+      }
+  
+      table td{
+        border-bottom: 1px solid #DDD;
+        display: block;
+        font-size: 0.8em;
+      }
+  
+      table td::before{
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    #text-not{
+        margin-top: 5%;
+        font-size: 55px;
+        margin-left: 12%;
+    }
+      #bnt-buscar-mais{
+        font-size: 50px;
+        margin-left: 25%;
+      }
+      .buscando{
+        font-size: 55px;
+        
+      }
+    
+}
