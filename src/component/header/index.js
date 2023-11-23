@@ -32,6 +32,7 @@ export default function Header(){
                       {signed ? <Nav.Link href="/perfil">Perfil</Nav.Link>:<Nav.Link href="/login">Login</Nav.Link>}
                       
                       <Nav.Link href="/pedidos">Pedidos</Nav.Link>
+                      <Nav.Link href="/info-cidade-ativa">Calendario</Nav.Link>
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>
@@ -59,6 +60,9 @@ export default function Header(){
               }
               <Nav.Item>
                   <Nav.Link href="/pedidos">Pedidos</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link href="/info-cidade-ativa">Calendario</Nav.Link>
               </Nav.Item>
             </Nav>
         </Container>

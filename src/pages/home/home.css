@@ -1,0 +1,69 @@
+.info-aplicativo-1,
+.info-aplicativo-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+.info-aplicativo-1:nth-child(1){
+    margin-top: 25px;
+}
+.img,
+.txt {
+    flex: 1;
+    padding: 10px;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.txt p {
+    text-align: justify;
+}
+#bnt-home-login{
+    margin-left: 45%;
+}
+#bnt-home-pedidos{
+    margin-left: 25%;
+}
+#bnt-home-cidadeAtiva-2{
+    margin-left: 25%;
+}
+
+@media (max-width: 999px) {
+    .info-aplicativo-1,
+    .info-aplicativo-2 {
+        display: block;
+    }
+
+    .img,
+    .txt {
+        font-size: 16px;
+        width: 100%;
+        order: 1;
+        margin: 10px 0;
+        font-size: 45px;
+    }
+
+#bnt-home-login{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 50px;
+    margin-left: 38%;
+}
+#bnt-home-pedidos{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 50px;
+    margin-left: 12%;
+}
+#bnt-home-cidadeAtiva-2{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 50px;
+    margin-left: 2%;
+}
+}

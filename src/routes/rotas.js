@@ -12,6 +12,7 @@ import WorkPerfil from '../pages/WorkPerfil';
 import WorkAdmin from '../pages/WorkAdmin';
 import Admin from '../pages/Admin';
 import CidadeAtiva from '../pages/CidadeAtiva';
+import AllCidadeAtiva from '../pages/AllCidadeAtiva';
 
 export default function Rotas(){
     const {user,signed} = useContext(AuthContext)
@@ -27,6 +28,7 @@ export default function Rotas(){
                 <Route path='/pedidos' element={<Work/>}/>
                 <Route path='/Pedidos-Admin' element={signed && user.email === 'admin@admin.com'? <WorkAdmin/>:<Home/>}/>
                 <Route path='/Cidade-Ativa-admin' element={signed && user.email === 'admin@admin.com'?<CidadeAtiva/>:<Home/>}/>
+                <Route path='/info-cidade-ativa' element={<AllCidadeAtiva/>}/>
             </Routes>
         </BrowserRouter>
     );

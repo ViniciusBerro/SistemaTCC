@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { useContext } from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { db } from "../../db/Firebase";
-import { addDoc, doc,collection,getDocs,query,updateDoc,deleteField, FieldValue, Firestore, deleteDoc } from "firebase/firestore";
-import { useEffect } from "react";
+import { addDoc, doc,collection,getDocs,query,deleteField, deleteDoc } from "firebase/firestore";
 
 import './cidadeAtiva.css'
-
+import { format } from "date-fns";
 const listRef = collection(db,'CidadeAtiva')
 export default function CidadeAtiva(){
     const {logout} = useContext(AuthContext)
@@ -49,9 +48,14 @@ export default function CidadeAtiva(){
     }
     async function cadastrarCidadeAtiva(){
         if(bairro !== '' && dataInicio !== '' && dataFinal !== ''){
+            debugger
+            const diaI = new Date(`${dataInicio}T00:00:00`);
+            const inicio = format(diaI, 'dd/MM/yyyy');
+            const diaF = new Date(`${dataFinal}T00:00:00`);
+            const final = format(diaF, 'dd/MM/yyyy');
             await addDoc(collection(db, 'CidadeAtiva'),{
-                diaInicio: dataInicio,
-                diaFinal: dataFinal,
+                diaInicio: inicio,
+                diaFinal: final,
                 bairro: bairro,
                 cor: '#00000',
             })
